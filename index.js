@@ -10,7 +10,7 @@ class Usuario {
 
     getFullName() {
         console.log('El nombre completo es....')
-        console.log(`${this.nombre + this.apellido}`);
+        console.log(`${this.nombre} ${this.apellido}`);
     }
 
     addMascota(mascotaNueva){
@@ -27,7 +27,7 @@ class Usuario {
 
     addBook(id,nombre) {
         console.log('Agregar Libro....');
-        this.Book.push({
+        this.libros.push({
             id: id, nombre: nombre
         });
     }
@@ -38,11 +38,8 @@ class Usuario {
         this.libros.forEach(libros => {
             nombres.push(libros.nombre);  
         });
-        return(`${this.libros.length >1 ? 'Los libros de' : 'El libro de'} 
-        ${this.nombre} 
-        ${this.apellido} 
-        ${this.libros.length >1 ? 'son:' : 'es'} 
-        ${nombres}.`)
+        return(`${this.libros.length >1 ? 'Los libros de' : 'El libro de'} ${this.nombre} ${this.apellido} 
+        ${this.libros.length >1 ? 'son:' : 'es'} ${nombres}.`)
     }
 }
 
@@ -62,19 +59,18 @@ l.countMascota();
 l.addBook(100,'Matrix');
 console.log(l.getBooksNames());
 
-/*
+
 const j = new Usuario('Julieta',
     'Confalonieri',
-    ['Blancanieves', 'Alicia en el pais de las maravillas'],
-    [{id:0, nombre: 'Simona'},{id:1,nombre: 'Luke'}]);
+    [{id:0, nombre: 'Blancanieves'},{id:1,nombre:  'Alicia en el pais de las maravillas'}],
+    ['Simona','Luke']);
 console.log(j);
 j.getFullName();
 
 const lo = new Usuario('Lorena',
     'Miranda',
-    ['Blancanieves', 'La Mujer maravilla'],
-    [{id:0, nombre: 'Emma'},{id:1,nombre: 'Vigo'},{id:2,nombre: 'Max'}]);
+    [{id:0, nombre: 'Blancanieves'},{id:1,nombre:  'La Mujer maravilla'}],
+    ['Emma','Vigo','Max']);
 console.log(lo);
 lo.getFullName();
 
-*/
